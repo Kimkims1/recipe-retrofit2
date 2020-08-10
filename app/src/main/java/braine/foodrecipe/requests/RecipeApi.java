@@ -1,5 +1,6 @@
 package braine.foodrecipe.requests;
 
+import braine.foodrecipe.response.RecipeResponse;
 import braine.foodrecipe.response.RecipeSearchResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -14,5 +15,12 @@ interface RecipeApi {
             @Query("key") String key,
             @Query("q") String query,
             @Query("page") String page
+    );
+
+    //GET RECIPE REQUEST
+    @GET("api/get")
+    Call<RecipeResponse> getRecipe(
+            @Query("key") String key,
+            @Query("rId") String recipe_id
     );
 }
